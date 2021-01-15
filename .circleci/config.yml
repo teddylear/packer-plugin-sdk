@@ -114,16 +114,8 @@ workflows:
       - check-lint
       - test-linux
       - trigger-release:
-        filters:
-          branches:
-            only:
-              - master
         type: approval
       - "sdk release"
-        filters:
-          branches:
-            only:
-              - master
         requires:
           - trigger-release
           - check-generate
