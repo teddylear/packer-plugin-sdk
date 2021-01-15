@@ -114,12 +114,12 @@ workflows:
       - check-lint
       - test-linux
       - trigger-release:
-        type: approval
-      - "sdk release"
-        requires:
-          - trigger-release
-          - check-generate
-          - check-fmt
-          - check-lint
-          - test-linux
+          type: approval
+      - "sdk release":
+          requires:
+            - trigger-release
+            - check-generate
+            - check-fmt
+            - check-lint
+            - test-linux
 
